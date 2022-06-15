@@ -1,0 +1,150 @@
+.hero-wrapper {
+  padding-top: 63px;
+
+  @include mqUP (1024px) {
+    display: grid;
+    grid-template-columns: minmax(300px, 422px) 1fr 1.2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 30px;
+  }
+}
+
+.hero {
+  &__banner {
+    margin-bottom: 50px;
+    @include sizes (100%, 283px);
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 20px;
+
+    @include mqUP (768px) {
+      height: 650px;
+    }
+
+    @include mqUP (1024px) {
+      margin-bottom: 0;
+      height: 100%;
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 2;
+    }
+  }
+
+  &__banner img {
+    width: 100%;
+    object-fit: cover;
+
+    @include mqUP (1024px) {
+      height: 100%;
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+    @include mqUP (1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.215em;
+
+    @include mqUP (1024px) {
+      text-align: left;
+      font-size: 62px;
+      line-height: 45px;
+    }
+
+    &--smaller {
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.215em;
+      text-transform: uppercase;
+
+      @include mqUP (1024px) {
+        text-align: left;
+        font-size: 29px;
+        line-height: 44px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    margin-bottom: 54px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 0.36;
+
+    @include mqUP (1024px) {
+      text-align: left;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}
+
+.hero-card {
+  display: none;
+  pointer-events: none;
+  appearance: none;
+  opacity: 0;
+  z-index: -1;
+
+  @include mqUP (1024px) {
+    padding: 30px 25px 20px;
+    display: block;
+    appearance: initial;
+    z-index: initial;
+    opacity: 1;
+    pointer-events: initial;
+
+    background-color: var(--semi-black);
+    border-radius: 10px;
+  }
+
+
+  &__header {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--white);
+  }
+
+  &__text {
+    margin-top: 14px;
+    margin-bottom: 18px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    opacity: 0.36;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+  }
+}

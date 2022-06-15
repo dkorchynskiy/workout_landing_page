@@ -1,0 +1,6 @@
+.vscode/**/*
+.DS-store/**/*
+*.xml
+*.iml
+
+node_modules/**/*
